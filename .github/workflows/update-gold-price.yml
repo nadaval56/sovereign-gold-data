@@ -1,0 +1,47 @@
+name: Update Gold Price Daily
+
+on:
+  schedule:
+    # רץ כל יום בשעה 07:00 UTC (09:00 בחורף / 10:00 בקיץ בישראל)
+    - cron: '0 7 * * *'
+  
+  # אפשר להריץ ידנית מה-Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-price:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: 📦 Install dependencies
+      run: |
+        pip install requests
+    
+    - name: 🔄 Run update script
+      run: |
+        python update_gold_price.py
+    
+    - name: 📝 Commit and push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions Bot"
+        git add gold-data.json
+        
+        # בדוק אם יש שינויים לפני commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🪙 Update gold price - $(date +'%Y-%m-%d %H:%M UTC')"
+          git push
+          echo "✅ Changes pushed successfully"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
