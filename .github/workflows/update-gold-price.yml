@@ -26,6 +26,8 @@ jobs:
         pip install requests
     
     - name: 🔄 Run update script
+      env:
+        GOLD_API_KEY: ${{ secrets.GOLD_API_KEY }}
       run: |
         python update_gold_price.py
     
