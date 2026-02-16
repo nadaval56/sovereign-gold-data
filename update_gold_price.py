@@ -9,10 +9,20 @@ import requests
 import json
 from datetime import datetime
 
-# הגדרות API
-GOLD_API_KEY = 'goldapi-kxvn5yly5b34xpl-io'  # API key חינמי מ-goldapi.io
+import os
+
+# הגדרות API - ה-key נשלף מ-GitHub Secrets!
+GOLD_API_KEY = os.environ.get('GOLD_API_KEY', '')  # 🔒 מוסתר!
 GOLD_API_URL = 'https://www.goldapi.io/api/XAU/USD'
+
+# אפשרות 2: Metals-API (אם תרצה בעתיד)
+METALS_API_KEY = os.environ.get('METALS_API_KEY', '')
+METALS_API_URL = 'https://api.metals.live/v1/spot/gold'
+
 USD_ILS_URL = 'https://api.exchangerate-api.com/v4/latest/USD'
+
+# בחר איזה API להשתמש
+USE_METALS_API = False  # GoldAPI
 
 # קבועים של סוברין
 SOVEREIGN_PURE_GOLD_GRAMS = 7.32
