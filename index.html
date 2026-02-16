@@ -15,7 +15,7 @@
         
         body {
             font-family: 'Assistant', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -49,7 +49,7 @@
         .loading {
             text-align: center;
             padding: 40px;
-            color: #667eea;
+            color: #d4af37;
             font-size: 18px;
         }
         
@@ -87,7 +87,7 @@
         
         .divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent, #cbd5e0, transparent);
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
             margin: 25px 0;
         }
         
@@ -110,85 +110,99 @@
         }
         
         .opinion-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5c2 50%, #c9a961 100%);
+            color: #1a1a1a;
             border-radius: 15px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
         .opinion-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
         }
         
         .opinion-card h3 {
             font-size: 18px;
             margin-bottom: 15px;
-            opacity: 0.95;
+            opacity: 0.8;
             font-weight: 600;
+            color: #3a3a3a;
         }
         
         .opinion-card .value {
             font-size: 42px;
             font-weight: 700;
             margin: 15px 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: #1a1a1a;
         }
         
         .opinion-card .detail {
             font-size: 14px;
-            opacity: 0.85;
+            opacity: 0.7;
             line-height: 1.5;
+            color: #2d2d2d;
         }
         
         .update-time {
             text-align: center;
-            color: #a0aec0;
+            color: #999;
             font-size: 13px;
             margin-top: 25px;
             padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #ddd;
         }
         
         .explanation {
-            background: #f7fafc;
-            border-right: 4px solid #667eea;
+            background: #f7f7f7;
+            border-right: 4px solid #d4af37;
             padding: 20px;
             margin-top: 30px;
             border-radius: 10px;
         }
         
         .explanation h4 {
-            color: #2d3748;
+            color: #1a1a1a;
             margin-bottom: 12px;
             font-size: 18px;
         }
         
         .explanation p {
-            color: #4a5568;
+            color: #4a4a4a;
             line-height: 1.8;
             font-size: 15px;
+        }
+        
+        .explanation .note {
+            margin-top: 12px;
+            padding: 12px;
+            background: #fff9e6;
+            border-right: 3px solid #d4af37;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #5a5a5a;
         }
         
         .footer {
             text-align: center;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #ddd;
         }
         
         .footer a {
-            color: #667eea;
+            color: #d4af37;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
         
         .footer a:hover {
-            color: #764ba2;
+            color: #f4e5c2;
         }
         
         @media (max-width: 768px) {
@@ -267,29 +281,30 @@
                     <div class="opinion-card">
                         <h3>דעה א'</h3>
                         <div class="value" id="halfShekel9g">-</div>
-                        <div class="detail">מבוסס על 9 גרם כסף טהור<br>(דעת רוב הפוסקים)</div>
+                        <div class="detail">מבוסס על 9 גרם כסף טהור</div>
                     </div>
                     
                     <div class="opinion-card">
                         <h3>דעה ב'</h3>
                         <div class="value" id="halfShekel96g">-</div>
-                        <div class="detail">מבוסס על 9.6 גרם כסף טהור<br>(דעת החזון אי"ש)</div>
+                        <div class="detail">מבוסס על 9.6 גרם כסף טהור</div>
                     </div>
                 </div>
             </div>
             
             <div class="explanation">
-                <h4>📖 מהי מחצית השקל?</h4>
+                <h4>📊 איך מחושב הערך?</h4>
                 <p>
-                    <strong>מחצית השקל</strong> היא מטבע כסף תנ"כי שהיה נהוג בתקופת בית המקדש. 
-                    כל יהודי מגיל עשרים ומעלה היה חייב לתרום מחצית השקל מדי שנה למקדש, 
-                    כאמור בתורה: "זה יתנו כל העובר על הפקודים, מחצית השקל בשקל הקדש" (שמות ל', יג).
+                    הערך מחושב על בסיס <strong>מחיר הכסף העולמי</strong> (מתעדכן יומית) כפול משקל הכסף הטהור במחצית השקל.
+                    החישוב: <strong>מחיר גרם כסף × משקל (9 או 9.6 גרם) × שער הדולר</strong>.
                 </p>
                 <p style="margin-top: 10px;">
-                    <strong>המחלוקת במשקל:</strong> קיימות שתי דעות עיקריות לגבי המשקל המדויק של מחצית השקל. 
-                    רוב הפוסקים סוברים ש-9 גרם כסף טהור, בעוד החזון אי"ש סובר ש-9.6 גרם. 
-                    ההבדל נובע ממחלוקת הלכתית לגבי יחידות המידה המקראיות.
+                    הערכים המוצגים משקפים את <strong>ערך הכסף הגולמי בלבד</strong> - מחיר הכסף כחומר גלם בשוק העולמי.
                 </p>
+                <div class="note">
+                    <strong>💡 הערה חשובה:</strong> יש דעות הסוברות שיש להוסיף מע"מ (17%) ומיסי רכישה נוספים על הסכום, 
+                    ויש דעות הסוברות שאין צורך בכך. מומלץ להתייעץ עם רב מורה הוראה לקבלת הנחייה אישית.
+                </div>
             </div>
             
             <div class="update-time" id="updateTime">
@@ -298,7 +313,7 @@
             
             <div class="footer">
                 <p>חלק מפרויקט <a href="https://banknote.co.il" target="_blank">Banknote.co.il</a></p>
-                <p style="margin-top: 5px; font-size: 13px; color: #a0aec0;">
+                <p style="margin-top: 5px; font-size: 13px; color: #999;">
                     מחירי הכסף מתעדכנים אוטומטית כל יום ב-09:00
                 </p>
             </div>
