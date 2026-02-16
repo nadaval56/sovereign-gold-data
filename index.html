@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ערך מחצית השקל בזמן אמת | Banknote.co.il</title>
-    <meta name="description" content="מחשבון מחצית השקל המקראית: חישוב ערך בזמן אמת לפי מחיר הכסף העולמי. שתי דעות: 9 גרם כסף או 9.6 גרם כסף.">
+    <meta name="description" content="מחשבון מחצית השקל המקראית: חישוב ערך בזמן אמת לפי מחיר הכסף העולמי. מבוסס על 9.6 גרם כסף טהור.">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -96,55 +96,45 @@
         }
         
         .opinion-title {
-            font-size: 22px;
+            font-size: 20px;
             color: #2d3748;
             margin-bottom: 20px;
             text-align: center;
-            font-weight: 700;
+            font-weight: 600;
         }
         
-        .opinion-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .opinion-card {
+        .main-value-card {
             background: linear-gradient(135deg, #d4af37 0%, #f4e5c2 50%, #c9a961 100%);
             color: #1a1a1a;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            max-width: 500px;
+            margin: 0 auto;
         }
         
-        .opinion-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-        }
-        
-        .opinion-card h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
+        .main-value-card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
             opacity: 0.8;
             font-weight: 600;
             color: #3a3a3a;
         }
         
-        .opinion-card .value {
-            font-size: 42px;
+        .main-value-card .value {
+            font-size: 56px;
             font-weight: 700;
-            margin: 15px 0;
+            margin: 20px 0;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             color: #1a1a1a;
         }
         
-        .opinion-card .detail {
-            font-size: 14px;
+        .main-value-card .detail {
+            font-size: 16px;
             opacity: 0.7;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #2d2d2d;
         }
         
@@ -222,17 +212,12 @@
                 font-size: 14px;
             }
             
-            .opinion-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .main-value-card {
+                padding: 30px 20px;
             }
             
-            .opinion-card {
-                padding: 25px 20px;
-            }
-            
-            .opinion-card .value {
-                font-size: 36px;
+            .main-value-card .value {
+                font-size: 48px;
             }
             
             .price-box {
@@ -275,20 +260,12 @@
             <div class="divider"></div>
             
             <div class="opinion-section">
-                <div class="opinion-title">ערך מחצית השקל לפי שתי הדעות:</div>
+                <div class="opinion-title">ערך מחצית השקל:</div>
                 
-                <div class="opinion-grid">
-                    <div class="opinion-card">
-                        <h3>דעה א'</h3>
-                        <div class="value" id="halfShekel9g">-</div>
-                        <div class="detail">מבוסס על 9 גרם כסף טהור</div>
-                    </div>
-                    
-                    <div class="opinion-card">
-                        <h3>דעה ב'</h3>
-                        <div class="value" id="halfShekel96g">-</div>
-                        <div class="detail">מבוסס על 9.6 גרם כסף טהור</div>
-                    </div>
+                <div class="main-value-card">
+                    <h3>מחצית השקל</h3>
+                    <div class="value" id="halfShekel96g">-</div>
+                    <div class="detail">מבוסס על 9.6 גרם כסף טהור</div>
                 </div>
             </div>
             
@@ -296,14 +273,15 @@
                 <h4>📊 איך מחושב הערך?</h4>
                 <p>
                     הערך מחושב על בסיס <strong>מחיר הכסף העולמי</strong> (מתעדכן יומית) כפול משקל הכסף הטהור במחצית השקל.
-                    החישוב: <strong>מחיר גרם כסף × משקל (9 או 9.6 גרם) × שער הדולר</strong>.
+                    החישוב: <strong>מחיר גרם כסף × 9.6 גרם × שער הדולר</strong>.
                 </p>
                 <p style="margin-top: 10px;">
                     הערכים המוצגים משקפים את <strong>ערך הכסף הגולמי בלבד</strong> - מחיר הכסף כחומר גלם בשוק העולמי.
                 </p>
                 <div class="note">
-                    <strong>💡 הערה חשובה:</strong> יש דעות הסוברות שיש להוסיף מע"מ (17%) ומיסי רכישה נוספים על הסכום, 
-                    ויש דעות הסוברות שאין צורך בכך. מומלץ להתייעץ עם רב מורה הוראה לקבלת הנחייה אישית.
+                    <strong>💡 הערות חשובות:</strong>
+                    <br>• קיימות שיטות שונות לחישוב מחצית השקל. השתמשנו כאן בשיטה המקובלת של 9.6 גרם כסף טהור.
+                    <br>• חלק מהשיטות ההלכתיות סוברות שיש להוסיף מע"מ ומיסי רכישה נוספים על הסכום, וחלקן סוברות שאין צורך בכך.
                 </div>
             </div>
             
@@ -379,10 +357,7 @@
                 document.getElementById('usdRate').textContent = 
                     '₪' + formatNumber(data.usd_ils_rate);
                 
-                // עדכון מחצית השקל
-                document.getElementById('halfShekel9g').textContent = 
-                    formatCurrency(data.half_shekel_9g_ils);
-                
+                // עדכון מחצית השקל (9.6 גרם)
                 document.getElementById('halfShekel96g').textContent = 
                     formatCurrency(data.half_shekel_96g_ils);
                 
