@@ -1,17 +1,17 @@
 {
   "gold_price_oz_usd": 4676.49,
   "gold_price_gram_usd": 150.35,
-  "sovereign_value_ils": 3455.83,
+  "sovereign_value_ils": 3444.82,
   "sovereign_value_usd": 1100.58,
   "sovereign_gold_grams": 7.32,
   "silver_price_oz_usd": 73.0,
   "silver_price_gram_usd": 2.35,
-  "half_shekel_9g_ils": 66.33,
+  "half_shekel_9g_ils": 66.12,
   "half_shekel_9g_usd": 21.12,
-  "half_shekel_96g_ils": 70.75,
+  "half_shekel_96g_ils": 70.53,
   "half_shekel_96g_usd": 22.53,
-  "usd_ils_rate": 3.14,
-  "last_updated": "2026-04-03 08:04:16",
-  "last_updated_hebrew": "03.04.2026, 08:04",
-  "last_updated_timestamp": 1775203456
+  "usd_ils_rate": 3.13,
+  "last_updated": "2026-04-04 07:51:04",
+  "last_updated_hebrew": "04.04.2026, 07:51",
+  "last_updated_timestamp": 1775289064
 }
